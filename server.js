@@ -19,19 +19,12 @@ const morgan = require('morgan');
 
    maxAge: 24 * 60 * 60 * 1000
  }));
-/* old way of connecting to PG db from server.js file before modularizing this process
- * PG database client/connection setup
- * const { Pool } = require('pg');
- * const dbParams = require('./lib/db.js');
- * const db = new Pool(dbParams);
- * db.connect(); */
 
 /* load the logger first so all (static) HTTP requests are logged to STDOUT
  * 'dev' = Concise output colored by response status for development use.
  * the :status token will be colored red for server error codes, yellow for client error codes,
  * cyan for redirection codes, and uncolored for all other codes. */
 app.use(morgan('dev'));
-
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/styles", sass({
