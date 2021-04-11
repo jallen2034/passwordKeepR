@@ -9,7 +9,7 @@ const pool = new Pool({
   database: 'midterm'
 });
 
-/* helper function to check if a users email address already exists in our database - FIXED!
+/* check if a users email address already exists in our database - FIXED!
  * return a promise with false inside it if no userId exists */
 const emailExists = function (userEmail) {
   const query = `
@@ -29,7 +29,7 @@ const emailExists = function (userEmail) {
     });
 };
 
-// helper function that takes in req.body.email as "userEmail" and the users object, added hashing! much security! - WORKS!
+// takes in req.body.email as "userEmail" and the users object, added hashing! much security! - WORKS!
 const passwordValidator = function (userPassword, userEmail) {
 
   const query = `
@@ -49,8 +49,8 @@ const passwordValidator = function (userPassword, userEmail) {
     });
 };
 
-/* helper function that will determine if a user is authorized to be logged in or not
- * queries our db with the, return a promise with a false value if no userId exists */
+/* determines if a user is authorized to be logged in or not
+ * queries our db with the userID, return a promise with a false value if no userId exists */
 const isAuthenticated = function (userId) {
 
   if (userId) {
@@ -74,7 +74,7 @@ const isAuthenticated = function (userId) {
   return Promise.resolve(false);
 };
 
-// helper function to get all passwords by a userID and render it to the index page client side eventually
+// get all passwords by a userID and render it to the index page client side eventually
 const getPasswordsbyUsers = function (userId) {
 
   if (userId) {
@@ -93,7 +93,7 @@ const getPasswordsbyUsers = function (userId) {
   return Promise.resolve(false);
 };
 
-// helper function to delete password from the database when passed the button id. The button id should match the password primary key.
+// delete password from the database when passed the button id. The button id should match the password primary key.
 const deletePasswordFromDb = function (buttonId) {
   const query = `
     DELETE FROM passwords
@@ -104,7 +104,7 @@ const deletePasswordFromDb = function (buttonId) {
 
 }
 
-// helper function to edit password from the database when passed the button id. The button id should match the password primary key.
+// edit password from the database when passed the button id. The button id should match the password primary key.
 const editPasswordFromDb = function (buttonId, newPassword) {
   const query = `
     UPDATE passwords
@@ -126,7 +126,7 @@ const getEditedPassword = function (buttonId) {
   return pool.query(query);
 }
 
-// helper function to get organizations for a user to populate the org dropdown box when they make a password
+// get organizations for a user to populate the org dropdown box when they make a password
 const getUserOrganizations = function (userId) {
   const query = `
   SELECT DISTINCT organisations.name AS name
@@ -140,7 +140,7 @@ const getUserOrganizations = function (userId) {
     });
 };
 
-//will be used to enter a new login/password to the database
+// will be used to enter a new login/password to the database
 const newPasswordToDatabase = function (userId, orgId, category, url, password_text) {
   pool.query(`SELECT id FROM organisations WHERE organisations.name = '${orgName}';`)
   const query =`
@@ -177,7 +177,7 @@ const sortUserPasswords = function (userPasswordArr) {
   });
 };
 
-// export these helper functions to where they are needed
+// export helper functions to where needed
 module.exports = {
   emailExists,
   passwordValidator,
