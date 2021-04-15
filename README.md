@@ -39,6 +39,10 @@ If a user needs to log in to a specific website (e.g. Facebook) they can go into
 - Bootstrap 3.4.1
 - Body-parser 1.19.0
 
+## Video Demo
+
+https://www.youtube.com/watch?v=7IucUaPPT6o
+
 ## Screenshots
 
 Login page:
@@ -58,7 +62,3 @@ Creating a password
 !["On smaller displays"](https://github.com/frameDoubt/passwordKeepR/blob/master/docs/4.png)
 
 !["Error handling on smaller displays"](https://github.com/frameDoubt/passwordKeepR/blob/master/docs/5.png)
-
-## Videos
-
-https://streamable.com/0zr49c
