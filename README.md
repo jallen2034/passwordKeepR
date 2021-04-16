@@ -9,13 +9,13 @@ If a user needs to log in to a specific website (e.g. Facebook) they can go into
 ## Getting Started
 
 1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information 
-  - username: `labber` 
-  - password: `labber` 
+2. Install postgres on your local machine.
+3. Update the .env file with your correct local information 
+  - username: `postgres` 
+  - password: `postgres` 
   - database: `midterm`
-3. Install dependencies: `npm i`
-4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Reset database: `npm run db:reset`
+4. Install dependencies: `npm i`
+6. Reset database: `npm run db:reset`
   - Check the db folder to see what gets created and seeded in the SDB
 7. Run the server: `npm run local`
   - Note: nodemon is used, so you should not have to restart your server
@@ -38,6 +38,19 @@ If a user needs to log in to a specific website (e.g. Facebook) they can go into
 - Cookie-session 1.4.x or above
 - Bootstrap 3.4.1
 - Body-parser 1.19.0
+
+## Live Demo Link 
+
+https://passwordkeepr.jallen2034.me/login
+
+Application currently has no feature to register new accounts so please choose to login with the following predefined options:
+
+|      email       | master_password |
+|------------------|-----------------|
+| Alice@gmail.com  | 123             |
+| Kira@hotmail.com | 321             | 
+| Matt@outlook.com | 123             |
+| Lindsay@mail.ru  | 321             | 
 
 ## Video Demo
 
