@@ -42,6 +42,8 @@ If a user needs to log in to a specific website (e.g. Facebook) they can go into
 ## Todo
 
 - Encrypt passwords with bcrypt. Current way this is done is bad! 
+- Implement a full user registration.
+- Redo the front end with react. 
 
 ## Live Demo Link 
 
