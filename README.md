@@ -39,6 +39,10 @@ If a user needs to log in to a specific website (e.g. Facebook) they can go into
 - Bootstrap 3.4.1
 - Body-parser 1.19.0
 
+## Todo
+
+- Encrypt passwords with bcrypt. Current way this is done is bad! 
+
 ## Live Demo Link 
 
 https://passwordkeepr.jallen2034.me/login
